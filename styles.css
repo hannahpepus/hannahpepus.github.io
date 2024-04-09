@@ -2,10 +2,14 @@ body, html {
     /*height: 100%;*/
     margin: 0;
     padding: 0;
-    font-family:'Manrope';
+    font-family:'Manrope', 'Arial', 'Helvetica', sans-serif;
     font-size: 16px;
     font-weight: 400;
     background-color: #FAF2D4;
+}
+
+.project-page {
+    background-color: #FFFFFF;
 }
 
 /* Sticky Footer + Header */
@@ -60,7 +64,7 @@ body, html {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    font-size: 2em;
+    font-size: clamp(.8em, 2.5vw, 2em);
 }
 
 /* Change Dropdown Link Color on Hover */
@@ -69,7 +73,21 @@ body, html {
     color:#FFFBED;
 }
 
+@media (max-width: 768px) {
+
+.dropdown-content {
+    min-width: auto;
+}
+    
+.dropdown-content a {
+    padding: 5px
+}
+
+}
+
 /*end drop down*/
+
+
 
 /*#sticky-header::after {
     content: '';
@@ -94,7 +112,7 @@ body, html {
     margin-right: auto;
     color:#FFFBED;
     font-size: 2em;
-    font-family:'Staatliches';
+    font-family:'Staatliches', 'Anton', 'Exo', sans-serif;
     align-items:center;
 }
 
@@ -113,6 +131,8 @@ body, html {
 
 
 /*-------------------------------*/
+
+
 
 /* Background polygons */
 
@@ -166,7 +186,7 @@ body, html {
 .header-container h1 {
     font-size: 8em; Large text for the welcome message
     color: #FAF2D4;
-    font-family: 'Staatliches';
+    font-family:'Staatliches', 'Anton', 'Exo', sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 110%
@@ -176,7 +196,7 @@ body, html {
     margin-top: 10px;
     font-size: 8em; Large text for the welcome message
     color: #FAF2D4;
-    font-family: 'Staatliches';
+    font-family:'Staatliches', 'Anton', 'Exo', sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 110%
@@ -199,15 +219,25 @@ body, html {
     background-position: center;*/
 }
 
-.header-container h1, .subheader-container h1 {
+.header-container h1 {
     /* responsive font-size, min, value, max */
     font-size: clamp(4em, 8vw, 8em); /* 8vw = 8% of view width */
     color: #FAF2D4;
-    font-family: 'Staatliches';
+    font-family:'Staatliches', 'Anton', 'Exo', sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 110%
+    margin-bottom: 30px;
+}
 
+.subheader-container h1 {
+    /* responsive font-size, min, value, max */
+    font-size: clamp(4em, 8vw, 8em); /* 8vw = 8% of view width */
+    color: #FAF2D4;
+    font-family:'Staatliches', 'Anton', 'Exo', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%
 }
 
 .header-container, .subheader-container {
@@ -275,7 +305,7 @@ body, html {
 .welcome-hand {
     width: 20vw; /* 20% of the viewport width (i.e. 20% of screen width) */
     height: auto;
-    min-width: 150px;
+    min-width: 175px;
     max-width: 300px;
     transform: scaleX(-1) rotate(-11deg);
 }
@@ -295,18 +325,36 @@ body, html {
         width: 100%;
         height: auto; 
     }
+
+    .about-section {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
 }
 
 /* For Phones */
 @media (max-width: 480px) {
+    .header-container {
+        flex-direction: column;
+        margin-left: 0;
+    }
 
+    .header-container h1 {
+        margin-bottom: 10%;
+    }
 }
 
+@media (max-width: 380px) {
+    .subheader-container h1 {
+        font-size: clamp(3em, 8vw, 8em); /* 8vw = 8% of view width */
+    }
+}
 /*------------------------*/
 
 h1 {
     color: #FAF2D4;
-    font-family: 'Staatliches';
+    font-family:'Staatliches', 'Anton', 'Exo', sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 110%
@@ -315,7 +363,7 @@ h1 {
 h2 {
     font-size: 5em;
     font-weight: 400;
-    font-family: 'Staatliches';
+    font-family:'Staatliches', 'Anton', 'Exo', sans-serif;
 }   
 
 h3 {
@@ -323,18 +371,18 @@ h3 {
     font-size: clamp(0.5em, 5vw, 2.9em);
     color:#026378;
     font-weight: 200;
-    font-family: 'Staatliches';
+    font-family:'Staatliches', 'Anton', 'Exo', sans-serif;
 }
 
 p {
     font-size: 2em;
-    font-family:'Manrope';
+    font-family:'Manrope', 'Arial', 'Helvetica', sans-serif;
     /*margin-top: -20px; *//* Adjust spacing between welcome message and subtitle */
 }
 
 a {
     color:#FAF2D4;
-    font-family:'Staatliches';
+    font-family:'Staatliches', 'Anton', 'Exo', sans-serif;
     /*font-size: 2em;*/
     text-decoration: none;
 }
@@ -345,7 +393,7 @@ a:hover {
 
 .large-padding {
    /* padding: 20px;*/
-    font-size: 1.5em;
+   font-size: clamp(.75em, 2vw, 1.5em);
 }
 
 
@@ -444,12 +492,19 @@ a:hover {
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
+
+    .project-containers-section {
+        padding: 30px;
+    }
+
     .project-container {
       flex-direction: column; /* Stack children on top of each other */
       text-align: center; /* Center text when stacked */
       height: auto;
       margin-top: auto;
-      padding-top: auto;
+      padding: 5%;
+      margin-left: 0;
+      margin-right: 0;
     }
   
     .project-image {
@@ -486,8 +541,8 @@ a:hover {
     background-color: transparent;
     color: #FAF2D4;
     border: none;
-    font-family: 'Staatliches';
-    font-size: 2em;
+    font-family:'Staatliches', 'Anton', 'Exo', sans-serif;
+    font-size: clamp(1em, 2.5vw, 2em);
     font-style: normal;
     font-weight: 400;
     padding: 10px 20px;
@@ -501,8 +556,8 @@ a:hover {
     background-color: transparent;
     color: #EE98FD;
     border: none;
-    font-family: 'Staatliches';
-    font-size: 2em;
+    font-family:'Staatliches', 'Anton', 'Exo', sans-serif;
+    font-size: clamp(1em, 2.5vw, 2em);
     font-style: normal;
     font-weight: 400;
     padding: 10px 20px;
@@ -517,6 +572,18 @@ a:hover {
     color: #EE98FD;
 }
 
+
+@media (max-width: 768px) {
+
+.nav-button {
+    padding: 10px 0px;
+}
+
+.nav-button-current {
+    padding: 10px 0px;
+}
+
+}
 /* About Page Specific styling begins here */
 
 .about-header-container {
@@ -531,7 +598,7 @@ a:hover {
     text-align: right;
     background-size: cover;
     background-position: center;
-    font-size: .75em;
+    margin-top: 5%;
     padding: 20px;
     position: relative;
     z-index: 0;
@@ -560,7 +627,7 @@ a:hover {
 
 .about-header-container h1 {
     flex:1;
-    font-size: 5em;
+    font-size: clamp(3em, 5vw, 5em);
     margin-bottom: 0px;
     margin-top: 90px;
     z-index: 2;
@@ -604,11 +671,11 @@ a:hover {
 }
 
 .about-bottom-section h2 {
-    font-size: 3em;
+    font-size: clamp(2em, 2.5vw, 3em);
 }
 
 .about-bottom-section p {
-    font-size: 1.5em;
+    font-size: clamp(1em, 2.5vw, 1.5em);
 }
 
 .about-bottom-center {
@@ -625,10 +692,29 @@ a:hover {
     flex: 1;
 }
 
+@media (min-width: 768px) and (max-width: 1200px) {
+
+.about-header-container img {
+    width: 75%;
+}
+
+}
+
 @media (max-width: 768px) {
-    .about-header-container, .about-body-container {
-        width: 100%; /* Stacks the containers on smaller screens */
-        margin: 20px 0; /* Adjust spacing for a stacked layout */
+    .about-header-container {
+        width: 89%; /* Stacks the containers on smaller screens */
+        margin: 20px; /* Adjust spacing for a stacked layout */
+        margin-left: 0px;
+        margin-right: auto;
+    }
+
+    .about-header-container img {
+        width: 50%;
+    }
+
+    .about-body-container {
+        margin: 5% 15%;
+        width: auto;
     }
 
     .about-top-section {
@@ -676,11 +762,12 @@ a:hover {
 .tab-label {
     display: block;
     cursor: pointer;
-    padding: 5px 30px;
-    font-family: 'Staatliches';
-    font-size: 2em;
+    padding: 1.5% 8%;
+    font-family:'Staatliches', 'Anton', 'Exo', sans-serif;
+    font-size: clamp(1em, 2.5vw, 2em);
     color:#026378;
-    background-color: #FFFBED;
+    background-color: #FFFFFF;
+    border: 2px solid #026378;
     text-align: center;
     /*border-bottom: 1px solid #026378;
     border-top: 1px solid #026378; */
@@ -689,7 +776,8 @@ a:hover {
 }
 
 .tab-label:hover {
-    color:#EE98FD
+    color:#EE98FD;
+    border-color: #EE98FD;
 }
 
 /* Style tab contents */
@@ -726,21 +814,25 @@ a:hover {
     margin: 0;
     text-align: center;
     color:#026378;
-    font-family: 'Staatliches';
-    font-size: 1.5em;
+    font-family:'Staatliches', 'Anton', 'Exo', sans-serif;
+    font-size: clamp(0.75em, 2vw, 1.5em);
 }
 
 .project-page-title h2 {
     margin: 0;
     text-align: center;
     color:#026378;
-    font-size: 2.5em;
+    font-size: clamp(1em, 2.5vw, 2.5em);
 }
 
 /* Update to change the color of the checked label */
 .tab-input:checked + .tab-label {
     background-color: #026378; /* Checked tab color */
     color: #FFFBED;
+}
+
+.tab-input:checked + .tab-label:hover {
+    border-color:#026378;
 }
 
 /* Reset the display of all images to none */
@@ -765,22 +857,107 @@ a:hover {
     display: block;
 }
 
+
+/* Misc. Extras and Adjustments */
+
+.extra-margin-bottom {
+    margin-bottom: 40%;
+}
+
+
 /* Responsive design */
-@media (max-width: 768px) {
-    .tabs-container, .casestudy-image-container {
-        width: 100%;
+
+@media (min-width: 768px) and (max-width: 1100px) {
+    .tabs-container {
+        width: 30%;
+        margin-top: 10%;
     }
-    .about-top-section {
-        flex-direction: column;
+
+    .casestudy-image-container {
+        width: 100%;
+        margin-top: 10%;
     }
 }
 
+@media (max-width: 768px) {
+
+    .wrapper {
+        flex-direction: column;
+        margin-right: 1%;
+        margin-left: 1%;
+    }
+
+    .tabs-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 99%;
+        height: 20%;
+        background-color: #FFFFFF;
+        margin-top: 15%;
+        margin-left: 1%;
+        top: 4%;
+        overflow-x: auto; /* Enable horizontal scrolling */
+        overflow-y: hidden; /* Hide vertical scrollbar */
+        -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+        padding-top: 1.5%;
+        padding-bottom: 1.5%;
+        z-index: 1;
+          }
+
+    .extra-margin-bottom {
+        margin-bottom: 10px;
+    }
+
+    .project-page-title {
+        padding: 3%;
+        margin-left: 0;
+        position: sticky;
+        left: 0;
+        background-color: #FFFFFF;
+        width: auto;
+    }
+
+    .project-page-title p {
+        text-align: left;
+    }
+
+    .project-page-title h2 {
+        text-align: left;
+    }
+
+    .tabs {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+        width: auto;
+        padding: 3%;
+    }
+
+    .tab-label {
+        margin-right: 3%;
+        padding: 2% 2%;
+        margin-bottom: 0;
+    }
+
+    .casestudy-image-container {
+        width: auto;
+        margin-left: 0;
+        margin-right: 0;
+
+    }
+
+    .casestudy-image-container img {
+        width: 100%;
+    }
+}
 /*-----------------------*/
 
 /*resume page*/
 
 .resume-container {
-    margin-top: 5%;
+    margin-top: 7%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -791,14 +968,21 @@ a:hover {
     align-items: center;
     justify-content: center;
     margin-left: 20%;
+    width: auto;
+    max-width: 80%;
+    height: auto;
 }
 
 .download-button {
     background-color:#FFFBED;
     padding: 5px 30px;
-    margin-left: 10%;
-    font-family: 'staatliches';
-    font-size: 2em;
+    margin-left: 7%;
+    margin-right: 5%;
+    font-family:'Staatliches', 'Anton', 'Exo', sans-serif;
+    font-size: clamp(1em, 5vw, 1.75em);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle drop shadow */
+    text-align: center;
+    white-space: nowrap;
 }
 
 .download-button a {
@@ -807,6 +991,31 @@ a:hover {
 
 .download-button a:hover {
     color:#EE98FD;
+}
+
+/*resume page mobile styling*/
+
+@media (max-width: 768px) {
+    .resume-image {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .resume-image img {
+        max-width: 100%;
+    }
+
+    .resume-container {
+        flex-direction: column;
+        margin-top: 15%;
+        margin-left: 5%;
+        margin-right: 5%;
+        align-items: center;
+    }
+
+    .download-button {
+        margin: 5%;
+    }
 }
 
 /*scroll bar styling*/
@@ -843,6 +1052,36 @@ a:hover {
     scrollbar-color:black #FFFBED; /* Color of the scrollbar thumb and track */
 }
 
+/*CASE STUDY PAGE TABS CONTAINER SCROLLBARS*/
+
+.tabs-container::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+.tabs-container::-webkit-scrollbar-track {
+    background: #FFFFFF; /* Background color of the scrollbar track */
+}
+
+.tabs-container::-webkit-scrollbar-thumb {
+    background:#026378; /* Color of the scrollbar thumb */
+}
+
+.tabs-container::-webkit-scrollbar-thumb:hover {
+    background:#EE98FD; /* Color of the scrollbar thumb on hover */
+}
+
+/* For Firefox */
+.tabs-container {
+    scrollbar-width: auto; /* Width of the scrollbar */
+    scrollbar-color: #026378 #FFFFFF; /* Color of the scrollbar thumb and track */
+}
+
+/* For Microsoft Edge and IE */
+.tabs-container {
+    -ms-overflow-style: none; /* Hides the scrollbar */
+    scrollbar-width: thin; /* Width of the scrollbar */
+    scrollbar-color:#026378 #FFFFFF; /* Color of the scrollbar thumb and track */
+}
 
 /*ENTIRE PAGE SCROLLBARS*/
 
@@ -875,12 +1114,6 @@ html {
     scrollbar-color:#026378 #FFFBED; /* Color of the scrollbar thumb and track */
 }
 
-
-/* Misc. Extras and Adjustments */
-
-.extra-margin-bottom {
-    margin-bottom: 40%;
-}
 
 
 
@@ -916,12 +1149,11 @@ footer {
 }
 
 .hand-getintouch {
-    margin-left: 25%;
+    margin-left: 15%;
     align-self: start; /* Align SVG to the start of the flex container */
     max-width: 25%; /* Adjust SVG size as needed */
-    margin-bottom: 1em; /* Space below the SVG */
-    transform: rotate(11deg);
-    margin-top: 5%;
+    transform: rotate(-11deg);
+    margin-top: 10%;
 }
 
 /*.hand-getintouch {
@@ -942,6 +1174,8 @@ footer {
 
 .footer-text h2 {
     margin-bottom: 10px;
+    /* responsive font-size, min, value, max */
+    font-size: clamp(1em, 7vw, 5em);
 }
 
 .contact-info {
@@ -949,22 +1183,63 @@ footer {
     align-items: center; /* Align text and link vertically */
 }
 
-.linkedin-info p,
-.email-info p {
+.contact-info p {
     margin-right: 0.5em; /* Space between label and link */
     margin-top: 5px;
     margin-bottom: 5px;
+    font-size: clamp(0.5em, 4vw, 2em);
 }
 
 /* Ensure that the <a> tags do not have default styles that misalign them */
 .contact-info a {
     text-decoration: none;
     color: inherit; /* Make links the same color as the footer text */
-    font-size: 2em;
+    font-size: clamp(0.5em, 4vw, 2em);
 }
 
 .contact-info a:hover {
     color:#EE98FD;
+}
+
+@media (max-width: 912px) {
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+    }
+
+    .hand-getintouch {
+        margin-left: 13%;
+        align-self: end; /* Align SVG to the end of the flex container */
+        max-width: 25%; /* Adjust SVG size as needed */
+        margin-bottom: 2.5em; /* Space below the SVG */
+        transform: rotate(-10deg);
+        margin-top: 5%;
+    }
+
+    .footer-content {
+        margin-top: 20%;
+        margin-right: 10%;
+    }
+
+}
+
+@media (min-width:912px) and (max-width: 1100px) {
+
+    .hand-getintouch {
+        margin-left: 13%;
+        align-self: end; /* Align SVG to the end of the flex container */
+        max-width: 25%; /* Adjust SVG size as needed */
+        margin-bottom: 2.5em; /* Space below the SVG */
+        transform: rotate(-10deg);
+        margin-top: 10%;
+    }
+
+    .footer-content {
+        margin-top: 10%;
+        margin-right: 10%;
+    }
+
 }
 
 /* Additional styling for links and text */
