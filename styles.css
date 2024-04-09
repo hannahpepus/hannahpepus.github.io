@@ -827,7 +827,7 @@ a:hover {
     margin: 0;
     text-align: center;
     color:#026378;
-    font-size: clamp(1em, 2.5vw, 2.5em);
+    font-size: clamp(1em, 2vw, 2.5em);
 }
 
 /* Update to change the color of the checked label */
