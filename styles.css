@@ -159,7 +159,7 @@ body, html {
     height: 100%;
     background: #026378; /* The upper color */
     clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%); /* Adjust these points to match the angle of your image */
-    /*clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);*/
+    /*clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);*/
     /*box-shadow: 0 8px 0 0 #000;*/
     z-index: 1;
 }
@@ -331,7 +331,7 @@ body, html {
         margin-right: 5%;
     }
 
-     .about-section-text h3 {
+    .about-section-text h3 {
         margin-top: 0px;
         margin-bottom: 0px;
     }
@@ -745,10 +745,10 @@ a:hover {
 
 .tabs-container {
     /*width: 100%;*/
-    width: 30%;
+    width: 20%;
     margin-top: 5%;
     margin-left: 5%;
-    margin-right: 5%;
+    margin-right: 2%;
     display: block;
     position: sticky;
     top: 10%; /* Stick to the top of the viewport */
@@ -769,7 +769,7 @@ a:hover {
     cursor: pointer;
     padding: 1.5% 8%;
     font-family:'Staatliches', 'Anton', 'Exo', sans-serif;
-    font-size: clamp(1em, 2.5vw, 2em);
+    font-size: clamp(1em, 2vw, 2em);
     color:#026378;
     background-color: #FFFFFF;
     border: 2px solid #026378;
@@ -801,7 +801,7 @@ a:hover {
 .casestudy-image-container {
     flex-grow: 1;
     margin-top: 5%;
-    margin-left: 5%;
+    margin-left: 2%;
     margin-right: 5%;
     overflow-y: auto;
     padding: 10px;
@@ -874,7 +874,7 @@ a:hover {
 
 @media (min-width: 768px) and (max-width: 1100px) {
     .tabs-container {
-        width: 30%;
+        width: 20%;
         margin-top: 10%;
     }
 
@@ -884,7 +884,82 @@ a:hover {
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 476px) and (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        margin-right: 1%;
+        margin-left: 1%;
+    }
+    
+    .tabs-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 99%;
+        height: 20%;
+        background-color: #FFFFFF;
+        margin-top: 5%;
+        margin-left: 1%;
+        top: 4%;
+        overflow-x: auto; /* Enable horizontal scrolling */
+        overflow-y: hidden; /* Hide vertical scrollbar */
+        -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+        padding-top: 1.5%;
+        padding-bottom: 1.5%;
+        z-index: 1;
+    }
+
+     .extra-margin-bottom {
+        margin-bottom: 10px;
+    }
+
+    .project-page-title {
+        padding: 3%;
+        margin-left: 0;
+        position: sticky;
+        left: 0;
+        background-color: #FFFFFF;
+        width: auto;
+    }
+
+    .project-page-title p {
+        text-align: left;
+    }
+
+    .project-page-title h2 {
+        text-align: left;
+    }
+
+    .tabs {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+        width: auto;
+        padding: 3%;
+    }
+
+    .tab-label {
+        margin-right: 3%;
+        padding: 2% 2%;
+        margin-bottom: 0;
+    }
+
+    .casestudy-image-container {
+        width: auto;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0px;
+
+    }   
+
+    .casestudy-image-container img {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 476px) {
 
     .wrapper {
         flex-direction: column;
