@@ -331,6 +331,11 @@ body, html {
         margin-right: 5%;
     }
 
+     .about-section-text h3 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
 }
 
 /* For Phones */
