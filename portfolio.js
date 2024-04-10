@@ -14,6 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const classToShow = this.id;
             const imageToShow = document.querySelector(`.casestudy-image-container .${classToShow}`);
             imageToShow.style.display = 'block';
+
+             // Scroll to the top of the newly displayed image
+             imageToShow.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+
         });
     });
 });
